@@ -1,0 +1,32 @@
+#container {
+  width: 100vw; }
+  #container .page-header {
+    background-color: #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-left-radius: 2.4rem;
+    border-bottom-right-radius: 2.4rem; }
+    #container .page-header .title {
+      margin: 1.5rem; }
+    #container .page-header .nav-items {
+      padding-right: 4rem; }
+      #container .page-header .nav-items a {
+        margin-right: 5rem;
+        font-size: 2rem; }
+      #container .page-header .nav-items a:hover {
+        text-decoration: none; }
+  #container main .listings {
+    margin: 3rem; }
+    #container main .listings .item {
+      margin-top: 2rem;
+      padding: 2rem;
+      display: flex;
+      border: 1px solid grey;
+      border-radius: 20px; }
+      #container main .listings .item .img-container {
+        margin-right: 5rem; }
+        #container main .listings .item .img-container img {
+          width: 25rem; }
+
+/*# sourceMappingURL=page-landing.css.map */
