@@ -1,45 +1,118 @@
 #container{
-    width: 100vw;
     .page-header{
-        background-color:#dddddd;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom-left-radius: 2.4rem;
-        border-bottom-right-radius: 2.4rem;
-        .title {
-            margin:1.5rem;
-            
-        }
-        .nav-items{
-            padding-right: 4rem;
-            a {
-                margin-right: 5rem;
-                font-size: 2rem;
-                
+        padding-bottom: 6rem;
+        background-color:#f4f6ff;
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+        .top-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .title {
+                margin:1.5rem;
+                color: #005086;
+                padding-left: 1.5rem;;
             }
-            a:hover {
-                text-decoration: none;
+            .nav-items{
+                a {
+                    margin-right: 5rem;
+                    font-size: 2rem;
+                }
+                a:hover {
+                    text-decoration: none;
+                }
             }
         }
+        .description {
+            margin-top: 7.2rem;
+            margin-left: 4.6rem;
+            margin-bottom:3.2rem;
+        strong {
+            font: 700 4.2rem Archivo;
+            color: rgb(36, 36, 53);
+            line-height: 4.2rem;
+        }
+        p{
+            max-width: 30rem;
+            font-size: 2.4rem;
+            line-height: 2.6rem;
+            color: #005086;
+            margin-top: 0.5rem;
+        }
+        }
+    
     }
     main {
+        max-width: 800px;
+        margin:0 auto;
         .listings {
-            margin:3rem;
             .item{
-                margin-top: 2rem;
-                padding: 2rem;
-                display: flex;
-                border: 1px solid grey;
-                border-radius: 20px;
-                .img-container {
-                    margin-right:5rem ;
-                    img {
-                        width: 25rem;
-                    } 
+                background-color: var(--color-box-base);
+                border: 1 px solid var(--color-line-in-white);
+                border-radius: 0.8rem;
+                margin:2.4rem 0;
+                header {
+                    padding:32px;
+                    display: flex;
+                    img{
+                        width: 20rem;
+                    }
+                    div {
+                        max-width: 70%;
+                        margin: 1rem;
+                        margin-left:3rem;
+                        strong {
+                            font:700 3.0rem Archivo;
+                            color:rgb(2, 2, 39);
+                            word-wrap: break-word;
+                        }
+                        p {
+                            font-size: 1.6rem;
+                            line-height: 2.8rem;
+                            margin-left:1rem;
+                            word-wrap: break-word;
+                        }
+                    }
                 }
-                .content-container{
-                    
+                footer {
+                    background-color: var(--color-box-footer);
+                    border-top: 1px solid var(--color-line-in-white);
+                    display: flex;
+                    align-content: center;
+                    justify-content: space-between;
+                    padding:2rem 3rem;
+                    p {
+                        margin-top: 1.0rem;
+                        margin-bottom: 0;
+                        font-size: 1.4rem;
+                        line-height: 2.4rem;
+                        color: var(--color-text-complement);
+                        strong {
+                            font-size: 1.6rem;
+                            color:#1b6ca8;
+                            display: block;
+                        }
+                    }
+                    .button {
+                        width: 15rem;
+                        height:4.6rem;
+                        background: #007bff;
+                        color: var(--color-button-text);
+                        border:0;
+                        border-radius: 0.8rem;
+                        cursor:pointer;
+                        font: 700 1.4rem Archivo;
+                        display: flex;
+                        align-items:center;
+                        justify-content: space-evenly;
+                        text-decoration: none;
+                        transition: background 0.2s;
+                        margin-top:1.0rem;
+                    }
+                    .button:hover{
+                        background-color: #1b6ca8;
+                    }
+
                 }
             }
         }

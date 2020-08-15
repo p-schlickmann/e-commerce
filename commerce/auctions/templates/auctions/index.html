@@ -14,31 +14,46 @@
     <body id="home">
         <div id="container">
             <header class="page-header">
-                <div class="title">
-                    <h1 class="display-3">Auctions</h1>
+                <div class="top-content">
+                    <div class="title">
+                        <h1 class="display-3">Auctions.com</h1>
+                    </div>
+                    <div class="nav-items">
+                        <a href="">Active listings</a>
+                        <a href="">Categories</a>
+                        <a href="">Watchlist</a>
+                        <a href="">Create listing</a>
+                        <a href="">Profile</a>
+                    </div>
                 </div>
-                <div class="nav-items">
-                    <a href="">Active listings</a>
-                    <a href="">Categories</a>
-                    <a href="">Watchlist</a>
-                    <a href="">Create listing</a>
-                    <a href="">Profile</a>
+                <div class="description">
+                    <strong>Welcome Pedro</strong>
+                    <p>Check out all the available listings below</p>
                 </div>
             </header>
             <main>
                 <div class="listings">
-                    <h1 class="display-4">Active Listings</h1>
-                    <div class="item">
-                        <div class="img-container">
-                            <img src="{% static 'auctions/images/test.jpeg' %}" alt="">
-                        </div>
-                        <div class="content-container">
-                            <h1>Title</h1>
-                            <p><strong>Price: </strong><span>$70</span></p>
-                            <p>model</p>
-                            <p>when</p>
-                        </div>
-                    </div>
+                    <article class="item" >
+                        <header>
+                                <img src="{% static 'auctions/images/test.jpeg' %}" alt="">
+                            <div>
+                                <strong>Title</strong>
+                                <p class="article-content">descriptionescriptionescript</p>
+                            </div>
+                        </header>
+                        
+                        <footer>
+          
+                            <p>Price<strong>70.00</strong></p>
+                                
+                
+                            
+
+                            <a href="" class="button">Details</a>
+                        </footer>
+                        
+
+                    </article>
                 </div>
             </main>
         </div>
