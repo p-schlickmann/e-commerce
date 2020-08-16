@@ -1,7 +1,7 @@
 #container{
     .page-header{
         padding-bottom: 6rem;
-        background-color:#f4f6ff;
+        background-color:#feffec;
         border-bottom-right-radius: 24px;
         border-bottom-left-radius: 24px;
         .top-content {
@@ -15,8 +15,9 @@
             }
             .nav-items{
                 a {
-                    margin-right: 5rem;
+                    margin-right: 4rem;
                     font-size: 2rem;
+                    border-radius: 10px;
                 }
                 a:hover {
                     text-decoration: none;
@@ -43,34 +44,44 @@
     
     }
     main {
-        max-width: 800px;
+        max-width: 95%;
         margin:0 auto;
-        .listings {
+        
+        .row {
+            > div {
+                padding-top:2.8rem;
+            }
+            flex-wrap: wrap;
+            display: flex;
             .item{
+                height: 100%;
+                box-shadow: 3px 3px 10px 0px #e0dede;
                 background-color: var(--color-box-base);
                 border: 1 px solid var(--color-line-in-white);
                 border-radius: 0.8rem;
-                margin:2.4rem 0;
+                margin:2.0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 header {
                     padding:32px;
                     display: flex;
                     img{
-                        width: 20rem;
+                        width: 150px;
+                        height: 150px;
                     }
                     div {
-                        max-width: 70%;
                         margin: 1rem;
                         margin-left:3rem;
                         strong {
                             font:700 3.0rem Archivo;
                             color:rgb(2, 2, 39);
-                            word-wrap: break-word;
                         }
                         p {
                             font-size: 1.6rem;
                             line-height: 2.8rem;
-                            margin-left:1rem;
-                            word-wrap: break-word;
+                            margin-top:1rem;
+
                         }
                     }
                 }
@@ -96,7 +107,7 @@
                     .button {
                         width: 15rem;
                         height:4.6rem;
-                        background: #007bff;
+                        background: #17a2b8;
                         color: var(--color-button-text);
                         border:0;
                         border-radius: 0.8rem;
@@ -110,7 +121,7 @@
                         margin-top:1.0rem;
                     }
                     .button:hover{
-                        background-color: #1b6ca8;
+                        background-color: #198ea0;
                     }
 
                 }

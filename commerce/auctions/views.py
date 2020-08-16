@@ -1,14 +1,19 @@
+
+from datetime import datetime
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import User
+from . import models
 
 
 def index(request):
-    return render(request, "auctions/index.html")
+    items = models.Item.objects.all()
+    return render(request, "auctions/index.html", {
+        'items': items
+    })
 
 
 def login_view(request):
@@ -61,3 +66,20 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/register.html")
+
+
+def show_item(request, item_id):
+    item = models.Item.objects.get(id=item_id)
+    item_bids = len(item.bids.all())
+    return render(request, 'auctions/item.html', {
+        'item': item,
+        'bids_count': item_bids
+    })
+
+
+def save_bid(request, item_id):
+    item = models.Item.objects.get(id=item_id)
+    new_bid = models.Bid(item=item, amount=request.POST.get('amount'), created_on=datetime.now())
+    new_bid.save()
+    return HttpResponseRedirect(reverse('index'))
+

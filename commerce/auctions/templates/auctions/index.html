@@ -19,11 +19,11 @@
                         <h1 class="display-3">Auctions.com</h1>
                     </div>
                     <div class="nav-items">
-                        <a href="">Active listings</a>
-                        <a href="">Categories</a>
-                        <a href="">Watchlist</a>
-                        <a href="">Create listing</a>
-                        <a href="">Profile</a>
+                        <a href="" class="btn btn-outline-info">Active listings</a>
+                        <a href="" class="btn btn-outline-info">Categories</a>
+                        <a href="" class="btn btn-outline-info">Watchlist</a>
+                        <a href="" class="btn btn-outline-info">Create listing</a>
+                        <a href="" class="btn btn-outline-info">Profile</a>
                     </div>
                 </div>
                 <div class="description">
@@ -32,28 +32,25 @@
                 </div>
             </header>
             <main>
-                <div class="listings">
-                    <article class="item" >
-                        <header>
-                                <img src="{% static 'auctions/images/test.jpeg' %}" alt="">
-                            <div>
-                                <strong>Title</strong>
-                                <p class="article-content">descriptionescriptionescript</p>
-                            </div>
-                        </header>
-                        
-                        <footer>
-          
-                            <p>Price<strong>70.00</strong></p>
-                                
-                
+                <div class="row">
+                    {% for item in items %}
+                    <div class="col-lg-6 col-sm-8">
+                        <article class="item" >
+                            <header>
+                                    <img src={{item.img_url}} alt="">
+                                <div>
+                                    <strong>{{item.title}}</strong>
+                                    <p class="article-content">{{item.description}}</p>
+                                </div>
+                            </header>
                             
-
-                            <a href="" class="button">Details</a>
-                        </footer>
-                        
-
-                    </article>
+                            <footer>
+                                <p>Price<strong>{{item.price}}</strong></p>
+                                <a href="{% url 'item' item.id %}" class="button">Details</a>
+                            </footer>
+                        </article>
+                    </div>
+                    {% endfor %}
                 </div>
             </main>
         </div>

@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'auctions/styles/main.css' %}" rel="stylesheet">
+        <link href="{% static 'auctions/styles/partials/item-page.css' %}" rel="stylesheet">
+        <title>Auctions</title>
+    </head>
+    <body id="home">
+        <div id="container">
+            <header class="page-header">
+                <div class="top-content">
+                    <div class="title">
+                        <h1 class="display-3">Auctions.com</h1>
+                    </div>
+                    <div class="nav-items">
+                        <a href="{% url 'index'%}" class="btn btn-outline-info">Active listings</a>
+                        <a href="" class="btn btn-outline-info">Categories</a>
+                        <a href="" class="btn btn-outline-info">Watchlist</a>
+                        <a href="" class="btn btn-outline-info">Create listing</a>
+                        <a href="" class="btn btn-outline-info">Profile</a>
+                    </div>
+                </div>
+                <div class="description">
+                    <strong>{{item.title}}</strong>
+                    <p>Now It's time to place your bid! Find more details below</p>
+                </div>
+            </header>
+            <main>
+                <div>
+                    <img src={{item.img_url}} alt="">
+                    <div class="bids">
+                        <div class="place-bid">
+                            <h1 class="display-1">Place your bid</h1>
+                            <div class="item-details">
+                                <h1 class="display-4">Item details</h1>
+                                <p class="desc">Description: {{item.description}}</p>
+                                <p>Listed by: <a href="">Harry</a></p>
+                                <p>Category: Movies</p>
+                                <p>{{bids_count}} bids so far.</p>
+                            </div>
+                            <div class="form">
+                                
+                                <form action="{% url 'bids' item.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" value={{item}} name="item">
+                                    <input type="number" placeholder="Bid Amount" name="amount" required>
+                                    <button type='submit' class="btn btn-info">Place Bid</button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </main>
+</html>
